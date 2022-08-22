@@ -1,0 +1,632 @@
+$background: #FFFDF7;
+$background_grey: #F4F7E9;
+$black: #434343;
+$grey: #959595;
+$grey_light: #DDDDDD;
+$yellow_dark: #FDC921;
+$yellow: #FDD85D;
+$yellow_light: #FFEDB1;
+$blue_dark: #6798C0;
+$blue: #99D6EA;
+$blue_light: #C5E6F0;
+
+$shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+
+%flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  // box-shadow: inset 0 0 1px black;
+  color: $black;
+}
+
+h1{
+  font-size: 52px;
+  font-weight: 400;
+}
+
+h2{
+  font-size: 32px;
+}
+
+.section_title{
+  margin-bottom: 40px;
+}
+
+h4{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+p, .p{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.p_bold{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+a{
+  color: $black;
+  text-decoration: none;
+}
+
+section{
+  padding: 80px 0;
+}
+
+//
+
+body{
+  background-color: $background;
+  font-family: 'Alata', sans-serif;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: $yellow_light;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  @extend %flex-center;
+
+  .nav_container{
+    width: 90%;
+    max-width: 1000px;
+    height: 60px;
+
+    @extend %flex-center;
+    justify-content: space-between;
+    .logo{
+      font-size: 20px;
+      font-weight: 700;
+    }
+    ul{
+      margin: 0;
+      list-style-type: none;
+      @extend %flex-center;
+      gap: 20px;
+      @media screen and (max-width: 768px){
+        display: none;
+      }
+    }
+    button{
+      .hamburger{
+        border: 0.5px solid $black;
+        width: 30px;
+        margin: 6px 0;
+      }
+    }
+   .navbar-toggler{
+     border: 1px solid $black;
+     display: none;
+      @media screen and (max-width: 768px){
+        display: block;
+      }
+    }
+  }
+}
+
+.collapse, .collapsing{
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  list-style-type: none;
+  z-index: 998;
+  background-color: $yellow_light;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  display: none;
+  @media screen and (max-width: 768px){
+    display: block;
+  }
+  li{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px 0;
+  }
+}
+
+header{
+  position: relative;
+  height: 100vh;
+  @extend %flex-center;
+  overflow: hidden;
+  .header_container{
+    width: 90%;
+    max-width: 1000px;
+    z-index: 20;
+    .text_container{
+      max-width: 410px;
+      h1{
+        font-weight: 700;
+      }
+    }
+  }
+
+  .shape_container{
+    position: absolute;
+    width: 992px;
+    height: 100%;
+    right: 200px;
+    img{
+      position: absolute;
+    }
+    #smile{
+      position: relative;
+      width: 250px;
+      height: 250px;
+      top: 25%;
+      left: 50%;
+    }
+
+    #roundStick{
+      width: 75px;
+      top: 20%;
+      left: 78%;
+    }
+    #hexagon{
+      width: 150px;
+      top: 12%;
+      left: 93%;
+    }
+    #star4{
+      width: 125px;
+      top: 40%;
+      left: 90%;
+    }
+    #star{
+      width: 125px;
+      top: 52%;
+      left: 105%;
+    }
+    #triangle{
+      width: 125px;
+      top: 60%;
+      left: 72%
+    }
+    #rectangle{
+      width: 125px;
+      top: 72%;
+      left: 88%;
+    }
+    #circle{
+      width: 50px;
+      top: 86%;
+      left: 105%;
+    }
+  }
+  @media screen and (max-width: 1160px){
+    align-items: flex-start;
+    .header_container{
+      margin-top: 17vh;
+    }
+    .shape_container{
+      width: 576px;
+      right: 0;
+      #smile{
+        top: 50%;
+        left: 0%;
+      }
+      #roundStick{
+        top: 38%;
+        left: 40%;
+      }
+      #hexagon{
+        width: 100px;
+        top: 15%;
+        left: 80%;
+      }
+      #star4{
+        top: 35%;
+        left: 62%;
+      }
+      #star{
+        top: 45%;
+        left: 90%;
+      }
+      #triangle{
+        width: 100px;
+        top: 80%;
+        left: 45%;
+      }
+      #rectangle{
+        width: 125px;
+        top: 65%;
+        left: 65%;
+      }
+      #circle{
+        width: 50px;
+        top: 86%;
+        left: 90%;
+      }
+    }
+  }
+  @media screen and (max-width: 576px){
+    .shape_container{
+      width: 320px;
+      #smile{
+        width: 150px;
+        height: 150px;
+        top: 60%;
+        left: 7%;
+      }
+      #roundStick{
+        width: 44px;
+        top: 54%;
+        left: 53%;
+      }
+      #hexagon{
+        width: 66px;
+        top: 15%;
+        left: 80%;
+      }
+      #star4{
+        width: 66px;
+        top: 40%;
+        left: 70%;
+      }
+      #star{
+        width: 66px;
+        top: 60%;
+        left: 90%;
+      }
+      #triangle{
+        width: 55px;
+        top: 90%;
+        left: 45%;
+      }
+      #rectangle{
+        width: 66px;
+        top: 72%;
+        left: 62%;
+      }
+      #circle{
+        width: 33px;
+        top: 86%;
+        left: 85%;
+      }
+    }
+    @media screen and (max-width: 320px){
+      .shape_container{
+        left: 0;
+      }
+    }
+  }
+}
+
+#story{
+  @extend %flex-center;
+  flex-direction: column;
+  background-color: $background_grey;
+  height: 100vh;
+  .story_container{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    max-width: 1000px;
+    @extend %flex-center;
+    justify-content: flex-end;
+    .text_container{
+      width: 300px;
+      @extend %flex-center;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 10;
+      margin-right: 20px;
+    }
+    .shape_container{
+      position: absolute;
+      width: 992px;
+      height: 100%;
+      right: 0;
+      img{
+        position: absolute;
+      }
+      #pond{
+        width: 500px;
+        top: 20%;
+        left: -5%;
+      }
+      #fishUp{
+        width: 150px;
+        top: 20%;
+        left: 38%
+      }
+      #fishDown{
+        width: 150px;
+        top: 68%;
+        left: 23%;
+      }
+    }
+    @media screen and (max-width: 960px){
+      .shape_container{
+        width: 768px;
+        #pond{
+          left: -15%;
+        }
+        #fishUp{
+          left: 40%
+        }
+        #fishDown{
+          left: 20%;
+        }
+      }
+    }
+    @media screen and (max-width: 768px){
+      justify-content: flex-end;
+      .shape_container{
+        width: 576px;
+        #pond{
+          width: 400px;
+          top: 22%;
+          left: -25%;
+        }
+        #fishUp{
+          width: 125px;
+          top: 22%;
+          left: 35%
+        }
+        #fishDown{
+          width: 125px;
+          top: 62%;
+          left: 15%;
+        }
+      }
+    }
+    @media screen and (max-width: 470px){
+      justify-content: space-around;
+      flex-direction: column-reverse;
+      .text_container{
+        margin-right: 0;
+      }
+      .shape_container{
+        position: relative;
+        height: 180px;
+        width: 275px;
+        #pond{
+          width: 250px;
+          top: 0;
+          left: 0;
+        }
+        #fishUp{
+          width: 75px;
+          top: 20px;
+          left: 220px
+        }
+        #fishDown{
+          width: 75px;
+          top: 120px;
+          left: 140px;
+        }
+      }
+    }
+  }
+}
+
+#service{
+  @extend %flex-center;
+  flex-direction: column;
+  .service_container{
+    width: 90%;
+    max-width: 850px;
+    @extend %flex-center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    .ourService{
+      @extend %flex-center;
+      flex-direction: column;
+      width: 30%;
+      max-width: 200px;
+      gap: 12px;
+      img{
+        background-color: $yellow;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+      }
+      h4{
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: 768px){
+      justify-content: center;
+      .ourService{
+        margin-bottom: 20px;
+        width: 90%;
+        max-width: 500px;
+      }
+    }
+  }
+}
+
+#gallery{
+  @extend %flex-center;
+  flex-direction: column;
+  background-color: $background_grey;
+  .grid_container{
+    width: 90%;
+    max-width: 1000px;
+    .grid{
+      margin: 20px auto;
+      .grid-item {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+        height: fit-content;
+        transition: 1s ease all;
+        box-shadow: 2px 2px 4px 0 #ccc;
+        a{
+          display: block;
+          background-color: black;
+        }
+        img{
+          width: 240px;
+          transition-duration: .3s;
+          &:hover{
+            opacity: 0.9;
+          }
+        }
+        .text_container{
+          width: 240px;
+          margin-top: 10px;
+          @extend %flex-center;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 4px;
+        }
+      }
+    }
+  }
+}
+
+#contact{
+  @extend %flex-center;
+  flex-direction: column;
+  .form_container{
+    @extend %flex-center;
+    flex-direction: column;
+    background-color: $yellow_light;
+    width: calc(90% - 80px);
+    max-width: 800px;
+    padding: 40px;
+    .input_container{
+      @extend %flex-center;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 4px 0;
+      .input_container_sub{
+        @extend %flex-center;
+        flex: 1;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin: 4px 0;
+      }
+      .input_container_3{
+        @extend %flex-center;
+      }
+      label{
+        @extend %flex-center;
+        align-items: flex-end;
+        flex-direction: column;
+        white-space: nowrap;
+        span{
+          font-size: 12px;
+        }
+      }
+      input{
+        border: 1px solid black;
+        border-radius: 4px;
+        flex: 1;
+        margin: 0 4px;
+      }
+      #inputOther{
+        border: none;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        background-color: $yellow_light;
+        width: 100px;
+      }
+      #inputAsk{
+        height: 300px;
+      }
+    }
+    #inputContainerAsk{
+      display: flex;
+      align-items: flex-start;
+      label{
+        margin-top: 2px;
+      }
+    }
+    .button_container{
+      margin-top: 20px;
+      button{
+        color: $background;
+        background-color: $blue_dark;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+      }
+    }
+  }
+  @media screen and (max-width: 768px){
+    .form_container{
+      width: 90%;
+    }
+  }
+}
+
+footer{
+  background-color: $grey_light;
+  width: 100%;
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 32px 0;
+  gap: 20px;
+  .upper_container{
+    width: 90%;
+    @extend %flex-center;
+    justify-content: space-between;
+    .contact{
+      .contact_text{
+        margin: 4px 0;
+      }
+    }
+    ul{
+      li{
+        margin: 4px 0;
+        list-style-type: none;
+      }
+    }
+  }
+  #copyright{
+    color: $grey;
+  }
+}
+
+// animtaion
+
+@keyframes float{
+  0%  {transform: translateY(4px);}
+  50% {transform: translateY(-4px);}
+  100%{transform: translateY(4px);}
+}
+
+@keyframes shake1{
+  0% {transform: scale(1);}
+  40%{transform: scale(1.2);}
+  50%{transform: scale(1.2) rotate(-10deg);}
+  60%{transform: scale(1.2) rotate(10deg);}
+  70%{transform: scale(1.2) rotate(-10deg);}
+  80%{transform: scale(1.2) rotate(10deg);}
+}
+
+#smile, #roundStick, #rectangle, #star, #hexagon, #star4, #triangle, #circle{
+  animation-name: float;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+    &:hover{
+    cursor: pointer;
+    animation: shake1 1s 1;
+    filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.1));
+  }
+}
+
+#roundStick, #rectangle, #star{
+  animation-delay: -1s;
+}
+
+#hexagon, #star4, #triangle, #circle{
+  animation-delay: -2s;
+}
